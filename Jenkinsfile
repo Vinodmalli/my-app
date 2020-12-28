@@ -3,7 +3,7 @@ node {
         git 'https://github.com/Vinodmalli/my-app'
     }
     stage('compile-pkg'){
-        tool name: 'maven', type: 'maven'
-        sh 'mvn package'
+        def x = tool name: 'maven', type: 'maven'
+        sh "${x}/bin/mvn package"
     }
 }
